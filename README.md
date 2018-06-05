@@ -20,7 +20,7 @@ console.log('SelectedVariableEnclosingClassName -> SelectVariableEnclosingFuncti
 
 ![alt text](https://image.ibb.co/mG1SXn/insert_log_message.gif "Inserting meaningful log message after selecting a variable")
 
-The log message can be wrapped by changing the value of wrapLogMessage to true in settings.json
+The log message can be wrapped by changing the value of `turbocl.wrapLogMessage` to `true` in settings.json
 
 ![alt text](https://image.ibb.co/kLed57/wrap_log_message.gif "Wrapping The log message")
 
@@ -42,6 +42,13 @@ All it takes to delete all log messages, inserted by the extension, from the cur
 
 ![alt text](https://image.ibb.co/jkoKdS/delete_all_log_messages.gif "Delete all log messages, inserted by the extension, from the current file")
 
+V) Toggle Detect log message type
+
+- config value `turbocl.detectAllByExt` in settings.json, default is `true`
+- or press Ctrl + Shift + p, enter `Turbo Console Log: Toggle Detect log type`
+
+![](https://ws1.sinaimg.cn/large/7cb59251gy1fs0peelmrzg20ju0f4n6m.gif)
+
 ## Release Notes
 ---
 
@@ -53,11 +60,17 @@ Initial release of Turbo Console Log
 
 - New feature: The possibility of wrapping the log message is added
 
-## 1.2.0
+### 1.2.0
 
 - New feature: Comment all log messages inserted by the extension
 - New feature: Uncomment all log messages inserted by the extension
 - When requested, only the log messages inserted by the extension will be commented, uncommented or deleted
+
+## 1.3.0
+
+- New feature: Toggle Detect log message type (all or only by the extension)
+- New feature: Uncomment will apply with number of comment in one line
+- Fixed: Comment in one line after console.log
 
 ## Participate
 ---
