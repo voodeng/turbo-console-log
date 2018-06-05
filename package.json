@@ -15,7 +15,8 @@
         "onCommand:turboConsoleLog.displayLogMessage",
         "onCommand:turboConsoleLog.commentAllLogMessages",
         "onCommand:turboConsoleLog.uncommentAllLogMessages",
-        "onCommand:turboConsoleLog.deleteAllLogMessages"
+        "onCommand:turboConsoleLog.deleteAllLogMessages",
+        "onCommand:turboConsoleLog.toggleOnlyByExt"
     ],
     "main": "./turboConsoleLog",
     "contributes": {
@@ -23,10 +24,15 @@
             "type": "object",
             "title": "Turbo Console Log Configuration",
             "properties": {
-                "wrapLogMessage": {
+                "turbocl.wrapLogMessage": {
                     "type": "boolean",
                     "default": false,
                     "description": "Determine if the log message should be wrapped or not."
+                },
+                "turbocl.detectAllByExt": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "ONLY Detect this Extension added log."
                 }
             }
         },
@@ -46,6 +52,10 @@
             {
                 "command": "turboConsoleLog.deleteAllLogMessages",
                 "title": "Turbo Console Log: Delete All Log Messages"
+            },
+            {
+                "command": "turboConsoleLog.toggleOnlyByExt",
+                "title": "Turbo Console Log: Toggle Detect log type"
             }
         ],
         "keybindings": [

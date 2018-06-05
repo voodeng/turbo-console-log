@@ -129,15 +129,31 @@ function blockClosingBraceLineNum (document, lineNum) {
 */
 function detectAll(document) {
   const documentNbrOfLines = document.lineCount
-    const logMessagesRanges = []
-    for (let i = 0; i < documentNbrOfLines; i++) {
-      console.log(document.lineAt(i).text);
-      if (/console\.log\(\'\u200b.*\)/.test(document.lineAt(i).text)) {
-        logMessagesRanges.push(document.lineAt(i).rangeIncludingLineBreak)
-      }
+  const logMessagesRanges = []
+  for (let i = 0; i < documentNbrOfLines; i++) {
+    console.log(document.lineAt(i).text);
+    if (/console\.log\(.*\)/.test(document.lineAt(i).text)) {
+      logMessagesRanges.push(document.lineAt(i).rangeIncludingLineBreak)
     }
-    return logMessagesRanges
+  }
+  return logMessagesRanges
+}
+/**
+ * Detect all ONLY use this Extension added log message
+ * @param {TextDocument} document 
+ */
+function detectAllByExt(document) {
+  const documentNbrOfLines = document.lineCount
+  const logMessagesRanges = []
+  for (let i = 0; i < documentNbrOfLines; i++) {
+    console.log(document.lineAt(i).text);
+    if (/console\.log\(\'\u200b.*\)/.test(document.lineAt(i).text)) {
+      logMessagesRanges.push(document.lineAt(i).rangeIncludingLineBreak)
+    }
+  }
+  return logMessagesRanges
 }
 
 module.exports.message   = message
 module.exports.detectAll = detectAll
+module.exports.detectAllByExt = detectAllByExt
